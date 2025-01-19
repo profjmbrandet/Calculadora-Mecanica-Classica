@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Mecânica Clássica</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f5f5f5;
+    }
+
+    .calculator {
+      width: 500px;
+      background: #ffffff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .display {
+      width: 100%;
+      height: 80px;
+      background: #1e1e2e;
+      color: #fff;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 0 20px;
+      box-sizing: border-box;
+      overflow-x: auto;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: #d3d3d3;
+    }
+
+    .button {
+      padding: 20px;
+      background: #ffffff;
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .button.operator {
+      background: #6c63ff;
+      color: #fff;
+    }
+
+    .button.function {
+      background: #ff6b6b;
+      color: #fff;
+    }
+
+    .button:hover {
+      background: #eeeeee;
+    }
+
+    .button.operator:hover {
+      background: #5a52cc;
+    }
+
+    .button.function:hover {
+      background: #e65a5a;
+    }
+
+    .button.equal {
+      background: #4caf50;
+      color: #fff;
+      grid-column: span 2;
+    }
+
+    .button.equal:hover {
+      background: #45a049;
+    }
+
+    .button.clear {
+      background: #ff9800;
+      color: #fff;
+    }
+
+    .button.clear:hover {
+      background: #e68900;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <div id="display" class="display">0</div>
+    <div class="buttons">
+      <!-- Numbers and Basic Operators -->
+      <button class="button" onclick="append('7')">7</button>
+      <button class="button" onclick="append('8')">8</button>
+      <button class="button" onclick="append('9')">9</button>
+      <button class="button operator" onclick="append('/')">/</button>
+
+      <button class="button" onclick="append('4')">4</button>
+      <button class="button" onclick="append('5')">5</button>
+      <button class="button" onclick="append('6')">6</button>
+      <button class="button operator" onclick="append('*')">*</button>
+
+      <button class="button" onclick="append('1')">1</button>
+      <button class="button" onclick="append('2')">2</button>
+      <button class="button" onclick="append('3')">3</button>
+      <button class="button operator" onclick="append('-')">-</button>
+
+      <button class="button" onclick="append('0')">0</button>
+      <button class="button" onclick="append('.')">.</button>
+      <button class="button equal" onclick="calculate()">=</button>
+      <button class="button operator" onclick="append('+')">+</button>
+
+      <!-- Advanced Operations -->
+      <button class="button function" onclick="append('Math.sin(')">sin</button>
+      <button class="button function" onclick="append('Math.cos(')">cos</button>
+      <button class="button function" onclick="append('Math.tan(')">tan</button>
+      <button class="button function" onclick="append('Math.sqrt(')">√</button>
+
+      <button class="button function" onclick="append('Math.log(')">ln</button>
+      <button class="button function" onclick="append('Math.pow(')">x^y</button>
+      <button class="button function" onclick="append('Math.PI')">π</button>
+      <button class="button function" onclick="append('Math.E')">e</button>
+
+      <!-- Mechanics Formulas -->
+      <button class="button function" onclick="append('m*v')">p (momento)</button>
+      <button class="button function" onclick="append('0.5*m*v*v')">E cinética</button>
+      <button class="button function" onclick="append('m*g*h')">E potencial</button>
+      <button class="button function" onclick="append('F=m*a')">F (Força)</button>
+      <button class="button function" onclick="append('m*v')">mv (quantidade movimento)</button>
+
+      <button class="button function" onclick="append('F_atrito = μ*N')">F_atrito</button>
+      <button class="button function" onclick="append('F_elastica = -k*x')">F_elastica</button>
+      <button class="button function" onclick="append('F_grav = (G*m1*m2)/r^2')">F_grav (gravitação)</button>
+
+      <button class="button function" onclick="append('v = u + a*t')">Velocidade</button>
+      <button class="button function" onclick="append('s = u*t + (1/2)*a*t^2')">Distância (MRUA)</button>
+      <button class="button function" onclick="append('I_cilindro = 0.5*m*r^2')">I cilindro</button>
+      <button class="button function" onclick="append('I_esfera = 0.4*m*r^2')">I esfera</button>
+
+      <!-- Additional Mechanics Formulas -->
+      <button class="button function" onclick="append('W = F * d * Math.cos(theta)')">Trabalho</button>
+      <button class="button function" onclick="append('E_total = E_cin + E_pot')">E Total</button>
+
+      <button class="button function clear" onclick="clearDisplay()">AC</button>
+    </div>
+  </div>
+
+  <script>
+    const display = document.getElementById('display');
+
+    function append(value) {
+      if (display.innerText === '0') {
+        display.innerText = value;
+      } else {
+        display.innerText += value;
+      }
+    }
+
+    function clearDisplay() {
+      display.innerText = '0';
+    }
+
+    function calculate() {
+      let expression = display.innerText;
+
+      try {
+        expression = expression.replace(/p/g, '*'); // Traduzindo p como multiplicação
+        expression = expression.replace(/F_atrito/g, 'mu*N'); // Traduzindo F_atrito
+        expression = expression.replace(/F_elastica/g, '-k*x'); // Traduzindo F_elastica
+        expression = expression.replace(/F_grav/g, '(G*m1*m2)/r^2'); // Traduzindo F_grav
+        expression = expression.replace(/E_total/g, 'E_cin+E_pot'); // Somando energia total
+        expression = expression.replace(/W/g, '*'); // Ajustando fórmula de Trabalho
+
+        const result = eval(expression);
+        display.innerText = result;
+      } catch {
+        display.innerText = 'Erro';
+      }
+    }
+  </script>
+</body>
+</html>

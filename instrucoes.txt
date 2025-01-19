@@ -1,0 +1,109 @@
+Esta Calculadora de Mecânica Clássica foi projetada para ajudar estudantes e profissionais da área de física a resolverem problemas relacionados à mecânica clássica, além de realizar cálculos gerais e avançados de matemática. A calculadora oferece uma interface gráfica amigável para que as fórmulas e operações sejam realizadas de forma rápida e prática.
+
+Operações Matemáticas Básicas
+Adição (+)
+Subtração (-)
+Multiplicação (*)
+Divisão (/)
+Potenciação (x^y)
+Estas são as operações matemáticas básicas. Você pode realizar cálculos simples, como somar, subtrair, multiplicar e dividir números, além de usar a função de exponenciação para calcular potências.
+
+Operações Avançadas
+Funções Trigonométricas:
+
+Seno (sin): Math.sin()
+Cosseno (cos): Math.cos()
+Tangente (tan): Math.tan()
+Função Raiz Quadrada (√):
+
+Calcula a raiz quadrada de um número. Exemplo: √9 resulta em 3.
+Função Logaritmo Natural (ln):
+
+Math.log(): Calcula o logaritmo natural de um número.
+Constantes Matemáticas:
+
+π (Math.PI): A constante Pi (aproximadamente 3.14159).
+e (Math.E): A constante de Euler (aproximadamente 2.71828).
+Fórmulas de Mecânica Clássica
+A calculadora foi otimizada com várias fórmulas relacionadas à mecânica clássica. Elas podem ser inseridas diretamente na calculadora. Aqui estão as fórmulas que você pode usar:
+
+Momento (p):
+
+Fórmula: p = m * v
+Descrição: Momento é o produto da massa (m) pela velocidade (v).
+Exemplo: Para calcular o momento de um objeto com massa de 5 kg e velocidade de 10 m/s, use: 5*10.
+Energia Cinética (E_cin):
+
+Fórmula: E_cin = 0.5 * m * v^2
+Descrição: Energia cinética é a energia de um objeto em movimento. Depende de sua massa e velocidade.
+Exemplo: Para calcular a energia cinética de um objeto com massa de 5 kg e velocidade de 10 m/s, use: 0.5 * 5 * 10^2.
+Energia Potencial (E_pot):
+
+Fórmula: E_pot = m * g * h
+Descrição: Energia potencial é a energia armazenada devido à posição de um objeto em um campo gravitacional.
+Exemplo: Para calcular a energia potencial de um objeto com massa de 5 kg, altura de 10 m e aceleração da gravidade de 9.8 m/s², use: 5 * 9.8 * 10.
+Força (F):
+
+Fórmula: F = m * a
+Descrição: A força é o produto da massa (m) pela aceleração (a).
+Exemplo: Para calcular a força necessária para acelerar um objeto de 5 kg a 2 m/s², use: 5 * 2.
+Quantidade de Movimento (mv):
+
+Fórmula: mv = m * v
+Descrição: A quantidade de movimento é o produto da massa e da velocidade de um objeto.
+Força de Atrito (F_atrito):
+
+Fórmula: F_atrito = μ * N
+Descrição: A força de atrito é o produto do coeficiente de atrito (μ) e a força normal (N).
+Exemplo: Se o coeficiente de atrito for 0.5 e a força normal for 10 N, use: 0.5 * 10.
+Força Elástica (F_elastica):
+
+Fórmula: F_elastica = -k * x
+Descrição: A força elástica é a força exercida por uma mola, que depende da constante elástica (k) e da deformação (x).
+Exemplo: Para calcular a força de uma mola com constante elástica de 50 N/m e deformação de 2 m, use: -50 * 2.
+Força Gravitacional (F_grav):
+
+Fórmula: F_grav = (G * m1 * m2) / r^2
+Descrição: A força gravitacional entre dois corpos é dada pela lei da gravitação universal de Newton, onde G é a constante gravitacional, m1 e m2 são as massas dos dois corpos, e r é a distância entre eles.
+Exemplo: Para calcular a força gravitacional entre dois corpos com massas de 10 kg e 20 kg, separados por 2 m, use: (6.674 * 10^-11 * 10 * 20) / 2^2.
+Velocidade (v):
+
+Fórmula: v = u + a * t
+Descrição: A velocidade final (v) é a velocidade inicial (u) somada à aceleração (a) multiplicada pelo tempo (t).
+Exemplo: Para calcular a velocidade final de um objeto com velocidade inicial de 5 m/s, aceleração de 2 m/s² e tempo de 3 s, use: 5 + 2 * 3.
+Distância (s):
+
+Fórmula: s = u * t + 0.5 * a * t^2
+Descrição: A distância percorrida por um objeto em movimento retilíneo uniformemente acelerado (MRUA).
+Exemplo: Para calcular a distância percorrida por um objeto com velocidade inicial de 0 m/s, aceleração de 2 m/s², e tempo de 3 segundos, use: 0 * 3 + 0.5 * 2 * 3^2.
+Trabalho (W):
+
+Fórmula: W = F * d * cos(θ)
+Descrição: O trabalho realizado por uma força (F) em uma distância (d), considerando o ângulo (θ) entre a direção da força e o deslocamento.
+Exemplo: Para calcular o trabalho realizado por uma força de 10 N ao deslocar um objeto por 5 m, com um ângulo de 0° entre a força e o deslocamento, use: 10 * 5 * cos(0).
+Energia Total (E_total):
+
+Fórmula: E_total = E_cin + E_pot
+Descrição: A energia total de um sistema é a soma da energia cinética e da energia potencial.
+Exemplo: Para calcular a energia total de um objeto com 50 J de energia cinética e 30 J de energia potencial, use: 50 + 30.
+Como Usar as Fórmulas de Física na Calculadora
+Selecione a fórmula que deseja usar: As fórmulas de física estão organizadas na seção de funções da calculadora. Elas estão com o nome correspondente à fórmula, como p, E_cin, E_pot, etc.
+
+Substitua as variáveis: Após selecionar a fórmula, substitua as variáveis pela quantidade desejada. Por exemplo:
+
+Para calcular a energia cinética de um objeto com massa de 5 kg e velocidade de 10 m/s, clique em E_cin e depois em 0.5 * 5 * 10^2.
+Use os valores corretamente: Não se esqueça de ajustar a fórmula com as unidades corretas de cada valor. Para que a calculadora dê um resultado correto, todas as unidades devem estar consistentes.
+
+Realize o cálculo: Após inserir todos os valores nas fórmulas e operações, clique em = para obter o resultado.
+
+Exemplos de Cálculos
+Cálculo de Trabalho (W):
+
+Fórmula: W = F * d * cos(θ)
+Exemplo: Se uma força de 10 N é aplicada em um objeto e desloca 5 metros com um ângulo de 0° entre a direção da força e o deslocamento, a fórmula seria:
+10 * 5 * cos(0) → Resultado: 50 J
+Cálculo de Energia Potencial (E_pot):
+
+Fórmula: E_pot = m * g * h
+Exemplo: Se um objeto tem 5 kg de massa e está a uma altura de 10 m, com aceleração gravitacional de 9.8 m/s², a fórmula seria:
+5 * 9.8 * 10 → Resultado: 490 J
